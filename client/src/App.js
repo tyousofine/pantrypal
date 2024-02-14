@@ -1,13 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
 
-import RecipeRequest from './components/RecipeRequest';
+import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+
+import LandingPage from './pages/Landing';
+import InputPage from './pages/InputPage';
+import GalleryPage from './pages/Gallery';
 
 
 function App() {
   return (
     <div className="App">
-      <RecipeRequest />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LandingPage />}></Route>
+          <Route path='/generate' element={<InputPage />}></Route>
+          <Route path='/gallery' element={<GalleryPage />}></Route>
+
+        </Routes>
+
+      </BrowserRouter>
+
     </div>
   );
 }
