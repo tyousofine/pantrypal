@@ -19,7 +19,7 @@ export default function RecipeRequest({ ingredients }) {
 
     // gp3 API POST request function
     const gp3RequestHandler = async () => {
-        const response = await axios.post('https://vercel.com/tyousofine/pantrypal-server/api/recipe', {
+        const response = await axios.post('/api/recipe', {
             Method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -43,7 +43,7 @@ export default function RecipeRequest({ ingredients }) {
 
     // dalle-3 POST request function
     const dalleRequestHandler = async (dataForDalle) => {
-        const response = await axios.post('https://vercel.com/tyousofine/pantrypal-server/api/image', {
+        const response = await axios.post('/api/image', {
             Method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
