@@ -5,9 +5,7 @@ const OpenAI = require('openai');
 require('dotenv').config();
 const app = express();
 app.use(express.json())
-app.use(cors({
-    origin: 'http://localhost:3000'
-}));
+app.use(cors({}));
 
 const PORT = 5000
 const apiKey = process.env.OPENAI_API_KEY;
