@@ -22,7 +22,8 @@ export default function RecipeRequest({ ingredients }) {
         const response = await axios.post('https://pantrypal-server-plc3.onrender.com/api/recipe', {
             Method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': "*"
             },
             body: dataForGp3
         }).then((response) => {
@@ -46,7 +47,8 @@ export default function RecipeRequest({ ingredients }) {
         const response = await axios.post('https://pantrypal-server-plc3.onrender.com/api/image', {
             Method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': "*"
             },
             body: dataForDalle
         }).then((response) => {
