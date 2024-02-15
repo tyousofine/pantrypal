@@ -4,12 +4,14 @@ import * as dotenv from 'dotenv';
 
 const app = express();
 app.use(cors({
-    origin: 'https://pantrypal-jet.vercel.app',
+    origin: 'http://localhost:3000',
     credentials: true,
     allowedHeaders: "*",
-    origins: "*",
 
 }));
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*")
+})
 app.use(express.json())
 dotenv.config();
 const OpenAI = require('openai');
@@ -31,6 +33,7 @@ app.get('/api/recipe', async (req, res) => {
 
 // gp3 recipe request route and call
 app.post('/api/recipe', async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
 
     const reqbody = await ((req.body.body))
     const ingredients = reqbody.toString();
@@ -58,6 +61,7 @@ app.get('/api/image', async (req, res) => {
 
 // dall-3 post request route and call
 app.post('/api/image', async (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     const reqBody = await (req.body.body)
     const ingredients = reqBody[0].ingredients
     const title = reqBody[1].title;
