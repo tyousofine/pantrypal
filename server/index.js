@@ -2,15 +2,17 @@ import cors from 'cors';
 import express from 'express';
 import * as dotenv from 'dotenv';
 
-dotenv.config();
-const OpenAI = require('openai');
 const app = express();
-app.use(express.json())
 app.use(cors({
+    origin: 'http://localhost:3000',
     credentials: true,
     allowedHeaders: "*",
+    origins: "*",
 
 }));
+app.use(express.json())
+dotenv.config();
+const OpenAI = require('openai');
 
 const PORT = 5000
 const apiKey = process.env.OPENAI_API_KEY;
