@@ -23,7 +23,7 @@ export default function RecipeRequest({ ingredients }) {
             Method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "*"
+
 
             },
             body: dataForGp3
@@ -49,7 +49,7 @@ export default function RecipeRequest({ ingredients }) {
             Method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "*"
+
 
             },
             body: dataForDalle
