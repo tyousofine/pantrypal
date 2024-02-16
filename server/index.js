@@ -5,15 +5,10 @@ const cors = require('cors')
 const dotenv = require('dotenv');
 
 const app = express();
-app.use(cors({
-    origin: '*',
-    credentials: true,
-    allowedHeaders: "*",
-
-}));
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "*")
-})
+app.use(cors());
+// app.use((req, res, next) => {
+//     res.header("Access-Control-Allow-Origin", "*")
+// })
 app.use(express.json())
 dotenv.config();
 const OpenAI = require('openai');
@@ -35,8 +30,6 @@ app.get('/api/recipe', async (req, res) => {
 
 // gp3 recipe request route and call
 app.post('/api/recipe', async (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
-
     const reqbody = await ((req.body.body))
     const ingredients = reqbody.toString();
     console.log({ ingredients })
