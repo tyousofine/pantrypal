@@ -1,0 +1,18 @@
+$bg-color: #edeee9;
+$border-color: #ff9649;
+$button-color: #fbc7a1;
+$font-header-color: #1a6b81;
+$font-text-color: #1a6b81;
+// $font-color: #111111;
+
+@mixin breakpoint($min-width) {
+  @media only screen and (min-width: $min-width) {
+    @content;
+  }
+}
+
+@mixin breakpoint-small {
+  @include breakpoint(750px) {
+    @content;
+  }
+}

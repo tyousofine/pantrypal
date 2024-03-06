@@ -1,5 +1,5 @@
 
-import './App.css';
+import './styles/index.scss'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
@@ -16,9 +16,7 @@ function App() {
           <Route path="/" element={<LandingPage />}></Route>
           <Route path='/generate' element={<InputPage />}></Route>
           <Route path='/gallery' element={<GalleryPage />}></Route>
-
         </Routes>
-
       </BrowserRouter>
 
     </div>

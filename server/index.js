@@ -64,7 +64,7 @@ app.post('/api/image', async (req, res) => {
     // request dalle api
     const dalleCall = await openai.images.generate({
         model: "dall-e-2",
-        prompt: `photo of a ${title} showing made ONLY with these ingredients: ${ingredients}, professional food photography, Samyang/Rokinon Xeen 50mm T1.5 lens, medium shot, bokeh`,
+        prompt: `photo of a ${title} showing made ONLY with these ingredients: ${ingredients}, editorial photography, food photography, Samyang/Rokinon Xeen 50mm T1.5 lens, bokeh,`,
         size: '512x512',
         n: 1,
         quality: 'hd',

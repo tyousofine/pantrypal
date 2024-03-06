@@ -19,7 +19,8 @@ export default function RecipeRequest({ ingredients }) {
 
     // gp3 API POST request function
     const gp3RequestHandler = async () => {
-        const response = await axios.post('https://pantrypal-server-plc3.onrender.com/api/recipe', {
+        // const response = await axios.post('https://pantrypal-server-plc3.onrender.com/api/recipe',
+        const response = await axios.post('https://pantrypal-jet.vercel.app/api/recipe', {
             Method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
