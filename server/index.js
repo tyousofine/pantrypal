@@ -29,7 +29,7 @@ app.get('/', async (req, res) => {
 // })
 
 // gp3 recipe request route and call
-app.get('/api/recipe', async (req, res) => {
+app.post('/api/recipe', async (req, res) => {
     const reqbody = await ((req.body.body))
     const ingredients = reqbody.toString();
     console.log({ ingredients })
