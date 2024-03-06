@@ -22,7 +22,7 @@ export default function RecipeRequest({ ingredients }) {
         // CHANGE BACK TO THIS FOR RENDER IF VERCEL DOESNT WORK AGAIN
         // const response = await axios.post('https://pantrypal-server-plc3.onrender.com/api/recipe',
         const response = await axios.get(`https://pantrypal-jet.vercel.app/api/recipe`, {
-            Method: 'POST',
+            Method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
             },
