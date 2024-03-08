@@ -19,8 +19,9 @@ export default function RecipeRequest({ ingredients }) {
 
     // gp3 API POST request function
     const gp3RequestHandler = async () => {
-
-        const response = await axios.post('https://pantrypal-server-plc3.onrender.com/api/recipe', {
+        //GO BACK TO RENDER IF VERCEL PERSIST WITH COR ISSUES
+        // const response = await axios.post('https://pantrypal-server-plc3.onrender.com/api/recipe',
+        const response = await axios.post('https://pantrypal-server.vercel.app/api/recipe', {
             Method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -44,7 +45,9 @@ export default function RecipeRequest({ ingredients }) {
 
     // dalle-3 POST request function
     const dalleRequestHandler = async (dataForDalle) => {
-        const response = await axios.post('https://pantrypal-server-plc3.onrender.com/api/image', {
+        //GO BACK TO RENDER IF VERCEL PERSIST WITH COR ISSUES
+        // const response = await axios.post('https://pantrypal-server-plc3.onrender.com/api/image',
+        const response = await axios.post('https://pantrypal-server.vercel.app/api/image', {
             Method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
