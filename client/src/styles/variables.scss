@@ -1,9 +1,9 @@
 $bg-color: #edeee9;
-$border-color: rgb(255, 150, 73);
+// $border-color: rgb(255, 150, 73);
+$border-color: #f35b04;
 $button-color: #fbc7a1;
-$font-header-color: rgb(26, 107, 129);
-$font-text-color: #1a6b81;
-// $font-color: #111111;
+$font-color: #0c2c37;
+$robot-color: #269fba;
 
 @mixin breakpoint($min-width) {
   @media only screen and (min-width: $min-width) {

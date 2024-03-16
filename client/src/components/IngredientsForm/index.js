@@ -30,7 +30,7 @@ export default function IngredientsForm() {
 
     return (
         <div>
-            <h2>Enter your ingredients:</h2>
+            <h4>Enter your ingredients:</h4>
             <div style={{ display: 'flex', alignItems: 'flex-end' }}>
                 <form>
                     {ingredients.map((ingredient, index) => (
@@ -44,7 +44,7 @@ export default function IngredientsForm() {
                         </div>
                     ))}
                 </form>
-                <button style={{ height: '20px' }} onClick={addIngredient}>Add another ingredient</button>
+                <button style={{ height: '20px' }} onClick={addIngredient}>Add More</button>
             </div>
 
             <button onClick={resetForm}>Reset Form</button>
