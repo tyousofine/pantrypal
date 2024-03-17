@@ -1,8 +1,11 @@
 
 import { useState } from 'react';
+import './styles.scss';
+
+//component imports
 import RecipeRequest from '../RecipeRequest';
 
-
+// this component is used in InputPage
 export default function IngredientsForm() {
     const initialState = [
         { name: '' },
@@ -29,7 +32,7 @@ export default function IngredientsForm() {
 
 
     return (
-        <div>
+        <div className='container-form-results'>
             <h4>Enter your ingredients:</h4>
             <div style={{ display: 'flex', alignItems: 'flex-end' }}>
                 <form>
@@ -44,7 +47,7 @@ export default function IngredientsForm() {
                         </div>
                     ))}
                 </form>
-                <button style={{ height: '20px' }} onClick={addIngredient}>Add More</button>
+                <button style={{ height: '20px' }} onClick={addIngredient}>+</button>
             </div>
 
             <button onClick={resetForm}>Reset Form</button>

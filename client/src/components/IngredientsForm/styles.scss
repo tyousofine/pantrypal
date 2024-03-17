@@ -1,0 +1,9 @@
+@import "../../styles/variables.scss";
+
+.container-form-results {
+  height: 100%;
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

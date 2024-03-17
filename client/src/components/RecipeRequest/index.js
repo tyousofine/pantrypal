@@ -3,10 +3,13 @@ import React from 'react'
 import axios from 'axios';
 import { useState } from 'react';
 
+//component imports
+import Loader from '../Loader';
+
 //this component is used in ingredientsForm page
 export default function RecipeRequest({ ingredients }) {
     const [recipe, setRecipe] = useState("");
-    const [loading, isLoading] = useState("");
+    const [isLoading, setIsLoading] = useState(false);
     const [image, setImage] = useState('');
     let dataForDalle;
 
@@ -61,22 +64,31 @@ export default function RecipeRequest({ ingredients }) {
     // call gp3 then dalle with onclick
     const getResultsHandler = async () => {
         try {
+            setIsLoading(true);
             const gp3Response = await gp3RequestHandler();
             const dalleRespone = await dalleRequestHandler(dataForDalle);
 
         } catch (error) {
             console.error('Error - something happened when using the mega button', error)
         }
+        setIsLoading(false);
     }
 
     return (
         <div>
             <button onClick={getResultsHandler}>Get Results!</button>
-            <div>
-                {!!image ? <img src={image} style={{ width: '300px' }} alt="food " />
-                    : (null)
-                }</div>
-            <div dangerouslySetInnerHTML={{ __html: recipe }}></div>
+            {!!isLoading ? <Loader /> :
+                <>
+                    <div>
+                        {!!image ? <img src={image} style={{ width: '300px' }} alt="food " />
+                            : (null)
+                        }
+                    </div>
+                    <div dangerouslySetInnerHTML={{ __html: recipe }}></div>
+
+                </>
+            }
+
         </div>
     )
 }
