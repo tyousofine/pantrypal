@@ -4,6 +4,7 @@ $border-color: #f35b04;
 $button-color: #fbc7a1;
 $font-color: #0c2c37;
 $robot-color: #269fba;
+$title-font: "Sunshiney", sans-serif;
 
 @mixin breakpoint($min-width) {
   @media only screen and (min-width: $min-width) {
