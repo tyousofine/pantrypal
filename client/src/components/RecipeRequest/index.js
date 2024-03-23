@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react'
 
-
 import axios from 'axios';
 import { useState } from 'react';
 
 //component imports
 import Loader from '../Loader';
-import ResultPage from '../../pages/ResultsPage';
+
 
 //this component is used in ingredientsForm page
 export default function RecipeRequest({ ingredients }) {
@@ -90,7 +89,15 @@ export default function RecipeRequest({ ingredients }) {
         <div>
             {/* <button onClick={getResultsHandler}>Get Results!</button> */}
             {!!isLoading ? <Loader /> :
-                <ResultPage image={image} recipe={recipe} />
+                <>
+                    <div>
+                        {!!image ? <img src={image} style={{ width: '300px' }} alt="food " />
+                            : (null)
+                        }
+                    </div>
+                    <div dangerouslySetInnerHTML={{ __html: recipe }}></div>
+
+                </>
             }
 
         </div>
