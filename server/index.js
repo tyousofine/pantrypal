@@ -44,7 +44,7 @@ app.post('/api/recipe', async (req, res) => {
         messages: [
             {
                 role: "system",
-                content: `You are a chef. You are a chef. Create a recipe using only and only these ingredients:${ingredients}. You may also use salt pepper and water as part of the ingredients.  The content should be formatted in SEO-friendly HTML. In addition to using HTML, your response should be limited to using the following HTML tags: h2, ul, and numbered li and p tags. Omit the word recipe in the recipe title.`
+                content: `You are a chef. You are a chef. Create a recipe using only and only these ingredients:${ingredients}. You may also use salt pepper and water as part of the ingredients.  The content should be formatted in SEO-friendly HTML. In addition to using HTML, your response should be limited to using the following HTML tags: h2, h3, ul, and numbered li, and p tags. Omit the word recipe in the recipe title.`
             }
         ]
     })
@@ -67,7 +67,7 @@ app.post('/api/image', async (req, res) => {
     // request dalle api
     const dalleCall = await openai.images.generate({
         model: "dall-e-2",
-        prompt: `photo of a ${title} showing made ONLY with these ingredients: ${ingredients}, editorial photography, food photography, Samyang/Rokinon Xeen 50mm T1.5 lens, bokeh,`,
+        prompt: `photo of a ${title} showing made ONLY with these ingredients: ${ingredients}, long shot, centered, editorial photography, food photography, Samyang/Rokinon Xeen 50mm T1.5 lens, bokeh,`,
         size: '512x512',
         n: 1,
         quality: 'hd',

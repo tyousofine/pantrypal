@@ -6,7 +6,7 @@ import './styles.scss';
 import RecipeRequest from '../RecipeRequest';
 
 // this component is used in InputPage
-export default function IngredientsForm() {
+export default function IngredientsForm({ onDataSubmit }) {
     const initialState = [
         { name: '' },
         { name: '' },
@@ -29,10 +29,11 @@ export default function IngredientsForm() {
         setIngredients(initialState)
     }
 
-    const formSubmitHandler = (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-
-    }
+        onDataSubmit(ingredients);
+        console.log({ ingredients })
+    };
 
 
 
@@ -55,10 +56,8 @@ export default function IngredientsForm() {
                 <button style={{ height: '20px' }} onClick={addIngredient}>+</button>
             </div>
 
-            <div>
-                <button onClick={resetForm}>Reset Form</button>
-                <button onClick={formSubmitHandler}>Generate Recipe</button>
-            </div>
+            <button onClick={resetForm}>Reset Form</button>
+            <button onClick={handleSubmit}>Generate Recipe</button>
             {/* <RecipeRequest ingredients={ingredients} /> */}
 
         </div>

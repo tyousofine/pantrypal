@@ -1,10 +1,21 @@
 import React from 'react'
-import { useState } from 'react';
+import NavBar from '../../components/NavBar'
 
-export default function ResultPage() {
-    const [loading, isLoading] = useState(false);
+
+// props coming from recipeRequest component
+export default function ResultPage({ image, recipe }) {
+
 
     return (
-        <div>RecipeResultPage - coming soon</div>
+        <>
+
+            <div>
+                {!!image ? <img src={image} style={{ width: '300px' }} alt="food " />
+                    : (null)
+                }
+            </div>
+            <div dangerouslySetInnerHTML={{ __html: recipe }}></div>
+
+        </>
     )
 }
