@@ -29,6 +29,11 @@ export default function IngredientsForm() {
         setIngredients(initialState)
     }
 
+    const formSubmitHandler = (e) => {
+        e.preventDefault();
+
+    }
+
 
 
     return (
@@ -50,8 +55,11 @@ export default function IngredientsForm() {
                 <button style={{ height: '20px' }} onClick={addIngredient}>+</button>
             </div>
 
-            <button onClick={resetForm}>Reset Form</button>
-            <RecipeRequest ingredients={ingredients} />
+            <div>
+                <button onClick={resetForm}>Reset Form</button>
+                <button onClick={formSubmitHandler}>Generate Recipe</button>
+            </div>
+            {/* <RecipeRequest ingredients={ingredients} /> */}
 
         </div>
     );

@@ -1,0 +1,19 @@
+@import "../../styles/variables.scss";
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 35vh;
+  background-image: url("../../images/ingredientsBG.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+
+  @include breakpoint-small {
+    h1 {
+      font-size: 8vw;
+    }
+  }
+}

@@ -16,12 +16,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: $bg-color;
-  background: linear-gradient(
-    rgba(131, 196, 214, 0.7) 0%,
-    rgba(237, 238, 233, 1) 40%,
-    rgba(237, 238, 233, 1) 95%,
-    rgba(131, 196, 214, 0.7) 100%
-  );
+
   color: $font-color;
   font-family: "Manrope";
 }
