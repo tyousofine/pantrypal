@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 //component imports
 import Loader from '../Loader';
+import ResultPage from '../../pages/ResultsPage';
 
 
 //this component is used in ingredientsForm page
@@ -90,13 +91,7 @@ export default function RecipeRequest({ ingredients }) {
             {/* <button onClick={getResultsHandler}>Get Results!</button> */}
             {!!isLoading ? <Loader /> :
                 <>
-                    <div>
-                        {!!image ? <img src={image} style={{ width: '300px' }} alt="food " />
-                            : (null)
-                        }
-                    </div>
-                    <div dangerouslySetInnerHTML={{ __html: recipe }}></div>
-
+                    <ResultPage image={image} recipe={recipe} />
                 </>
             }
 
