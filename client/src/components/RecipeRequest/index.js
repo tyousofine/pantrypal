@@ -12,10 +12,12 @@ import ResultPage from '../../pages/ResultsPage';
 export default function RecipeRequest({ ingredients }) {
     const [recipe, setRecipe] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [dataIsReady, setDataIsReady] = useState(false);
     const [image, setImage] = useState('');
 
 
     useEffect(() => {
+        setDataIsReady(false);
         if (ingredients) {
             let dataForDalle;
 
@@ -80,6 +82,7 @@ export default function RecipeRequest({ ingredients }) {
                     console.error('Error - something happened when using the mega button', error)
                 }
                 setIsLoading(false);
+                setDataIsReady(true);
             }
             getResultsHandler();
         }
@@ -88,12 +91,9 @@ export default function RecipeRequest({ ingredients }) {
 
     return (
         <div>
-            {/* <button onClick={getResultsHandler}>Get Results!</button> */}
-            {!!isLoading ? <Loader /> :
-                <>
-                    <ResultPage image={image} recipe={recipe} />
-                </>
-            }
+
+            {(!!isLoading && !dataIsReady) && <Loader />}
+            {(!isLoading && !!dataIsReady) && <ResultPage image={image} recipe={recipe} />}
 
         </div>
     )

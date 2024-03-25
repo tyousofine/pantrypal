@@ -7,6 +7,8 @@ import RecipeRequest from '../RecipeRequest';
 
 // this component is used in InputPage
 export default function IngredientsForm({ onDataSubmit }) {
+    const [isHiding, setIsHiding] = useState(false);
+
     const initialState = [
         { name: '' },
         { name: '' },
@@ -30,9 +32,11 @@ export default function IngredientsForm({ onDataSubmit }) {
     }
 
     const handleSubmit = (e) => {
+        setIsHiding(true);
         e.preventDefault();
-        onDataSubmit(ingredients);
-        console.log({ ingredients })
+        onDataSubmit(ingredients, isHiding);
+
+
     };
 
 
