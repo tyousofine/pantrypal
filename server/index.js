@@ -6,30 +6,30 @@ const bodyParser = require('body-parser')
 
 const app = express();
 app.use(cors());
-// app.use((req, res, next) => {
-//     res.header("Access-Control-Allow-Origin", "*")
-// })
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 dotenv.config();
 const OpenAI = require('openai');
+const loadRecipes = require('./database/read');
 
-const PORT = 5000
-const apiKey = process.env.OPENAI_API_KEY;
+const port = process.env.PORT || 5000;
+const OpenAiApiKey = process.env.OPENAI_API_KEY;
 
-const openai = new OpenAI({ apiKey: apiKey })
+
+//firebase function imports
+const getRecipes = require('./database/read');
+
+const openai = new OpenAI({ apiKey: OpenAiApiKey })
 
 // server test
 app.get('/', async (req, res) => {
     res.send('Hello from server!')
 })
 
-// gp3api setup
-// app.get('/api/recipe', async (req, res) => {
-//     res.send('Hello from recipe route!')
-// })
+
 
 // gp3 recipe request route and call
 app.post('/api/recipe', async (req, res) => {
@@ -78,6 +78,24 @@ app.post('/api/image', async (req, res) => {
     res.status(200).json({ photo: image });
 })
 
-app.listen(PORT, () => { console.log(`server running on port ${PORT}`) })
+/**
+ * FIREBASE ROUTES
+ */
+
+app.get('/gallery', async (req, res) => {
+    // res.send('hello from gallery recipes')
+    const recipes = await loadRecipes();
+    res.send(recipes);
+
+})
+
+app.post('/gallery', async (req, res) => {
+    const recipeData = req.body;
+
+})
+
+
+
+app.listen(port, () => { console.log(`server running on port ${port}`) })
 
 
