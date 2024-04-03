@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
+import './styles.scss';
 
 
 import IngredientsForm from '../../components/IngredientsForm'
@@ -27,13 +28,16 @@ export default function InputPage() {
 
 
     return (
-        <>  <NavBar />
-            {formOn &&
-                <IngredientsForm onDataSubmit={handleData} />
-            }
-            {!!formButton &&
-                <button onClick={formAndButtonToggleHandler}>test</button>}
-            <RecipeRequest ingredients={formData} />
+        <>
+            <NavBar />
+            <div className="container-inputPage">
+                {formOn &&
+                    <IngredientsForm onDataSubmit={handleData} />
+                }
+                {!!formButton &&
+                    <button onClick={formAndButtonToggleHandler}>form</button>}
+                <RecipeRequest ingredients={formData} />
+            </div>
         </>
     )
 }

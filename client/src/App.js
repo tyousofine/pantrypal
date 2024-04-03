@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from './pages/Landing';
 import InputPage from './pages/InputPage';
 import GalleryPage from './pages/Gallery';
-import ResultPage from './pages/ResultsPage';
+
 
 
 function App() {
