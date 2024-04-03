@@ -79,7 +79,7 @@ export default function RecipeRequest({ ingredients }) {
                     const dalleRespone = await dalleRequestHandler(dataForDalle);
 
                 } catch (error) {
-                    console.error('Error - something happened when using the mega button', error)
+                    console.error('Error - something went wrong', error)
                 }
                 setIsLoading(false);
                 setDataIsReady(true);
