@@ -60,8 +60,10 @@ export default function IngredientsForm({ onDataSubmit }) {
                 <button style={{ height: '20px' }} onClick={addIngredient}>+</button>
             </div>
 
-            <button onClick={resetForm}>Reset Form</button>
-            <button onClick={handleSubmit}>Generate Recipe</button>
+            <div>
+                <button onClick={resetForm}>Reset Form</button>
+                <button onClick={handleSubmit}>Generate Recipe</button>
+            </div>
             {/* <RecipeRequest ingredients={ingredients} /> */}
 
         </div>

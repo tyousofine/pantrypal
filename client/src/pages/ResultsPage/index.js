@@ -4,19 +4,19 @@ import axios from 'axios';
 
 // props coming from recipeRequest component
 export default function ResultPage({ image, recipe }) {
-    console.log('image and recipe from results desplay: ', image, recipe)
 
-    useEffect(() => {
-        axios.fetch('', {
-            method: 'POST',
-            header: "",
-            body: ""
-        }).then((res) => {
 
-        }).catch((error) => {
-            console.log(error)
-        })
-    })
+    // useEffect(() => {
+    //     axios.fetch('', {
+    //         method: 'POST',
+    //         header: "",
+    //         body: ""
+    //     }).then((res) => {
+
+    //     }).catch((error) => {
+    //         console.log(error)
+    //     })
+    // })
 
     return (
         <>
