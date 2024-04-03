@@ -29,18 +29,25 @@ export default function GalleryPage() {
 
 
     return (
-        <div>
+        <>
             <NavBar />
-            <h2>Gallery Page Coming Soon!</h2>
-            <div>
-                {recipes.map((recipe) => (
-                    <div key={recipe.id}>
-                        <img src={recipe.imageURL} alt="prepared food" />
-                        <p>{recipe.recipe}</p>
-                    </div>
+            <h2>THIS SECTION IS UNDER CONSTRUCTION!</h2>
+            <div className='container-gallery'>
+                <h2>WARNING:</h2>
+                <p>These recipes are AI created. Eat at your own risk!</p>
+                <div className='container-cards'>
+                    {recipes.map((recipe) => (
+                        <div className="card" key={recipe.id}>
+                            <img
+                                className='card-image'
+                                src={recipe.imageURL}
+                                alt="prepared food" />
+                            <p className='card-text'>{recipe.recipe.substring(0, 100)}...</p>
+                        </div>
 
-                ))}
+                    ))}
+                </div>
             </div>
-        </div>
+        </>
     )
 }
