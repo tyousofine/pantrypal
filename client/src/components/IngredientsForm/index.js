@@ -52,7 +52,7 @@ export default function IngredientsForm({ onDataSubmit }) {
                                 type="text"
                                 value={ingredient.name}
                                 onChange={(e) => handleInputChange(index, e.target.value)}
-                                autoFocus
+                                autoFocus={index === 0 || index >= 3}
                             />
                         </div>
                     ))}
