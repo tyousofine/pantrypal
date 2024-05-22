@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 0.8rem;
-  background-color: $button-color;
+  background-color: lighten($robot-color, 20%);
 
   a {
     text-decoration: none;
@@ -34,7 +34,7 @@
 
 @include breakpoint-small {
   .container-navbar {
-    padding: 0.7rem 2rem;
+    padding: 0.7rem 15rem;
 
     a {
       font-size: 2rem;
@@ -51,7 +51,8 @@
 
       li {
         a {
-          font-size: 1rem;
+          font-size: 1.2rem;
+          font-weight: 600;
           &:hover {
             font-size: 1.2rem;
           }

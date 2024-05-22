@@ -1,6 +1,9 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
+
+import thinking from '../../images/thinking.png';
 
 //component imports
 import RecipeRequest from '../RecipeRequest';
@@ -44,7 +47,7 @@ export default function IngredientsForm({ onDataSubmit }) {
     return (
         <div className='container-form-results'>
             <h4>Enter your ingredients:</h4>
-            <div style={{ display: 'flex', alignItems: 'flex-end' }}>
+            <div className='form'>
                 <form>
                     {ingredients.map((ingredient, index) => (
                         <div key={index}>
@@ -57,12 +60,16 @@ export default function IngredientsForm({ onDataSubmit }) {
                         </div>
                     ))}
                 </form>
-                <button style={{ height: '20px' }} onClick={addIngredient}>+</button>
+                <button className='add-button' onClick={addIngredient}><span>+</span></button>
             </div>
 
-            <div>
-                <button onClick={resetForm}>Reset Form</button>
-                <button onClick={handleSubmit}>Generate Recipe</button>
+            <div className='action-buttons'>
+                <Link onClick={resetForm}>
+                    <img src={thinking} alt="thinking robot" />
+                    Reset</Link>
+                <Link onClick={handleSubmit}>
+                    <img src={thinking} alt="thinking robot" />
+                    Generate</Link>
             </div>
             {/* <RecipeRequest ingredients={ingredients} /> */}
 

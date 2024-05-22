@@ -32,9 +32,9 @@ export default function GalleryPage() {
         <>
             <NavBar />
             <h2>THIS SECTION IS UNDER CONSTRUCTION!</h2>
-            <div className='container-gallery'>
-                <h2>WARNING:</h2>
-                <p>These recipes are AI created. Eat at your own risk!</p>
+            <h2>WARNING:</h2>
+            <p>These recipes are AI created. Eat at your own risk!</p>
+            {/* <div className='container-gallery'>
                 <div className='container-cards'>
                     {recipes.map((recipe) => (
                         <div className="card" key={recipe.id}>
@@ -47,7 +47,7 @@ export default function GalleryPage() {
 
                     ))}
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
