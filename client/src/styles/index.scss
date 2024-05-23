@@ -27,6 +27,13 @@ body {
 
   overflow: auto;
   scrollbar-width: none;
+
+  background: linear-gradient(
+    rgba(102, 202, 224, 1) 0%,
+    rgba(237, 238, 233, 1) 40%,
+    rgba(237, 238, 233, 1) 95%,
+    rgba(237, 238, 233, 1) 100%
+  );
 }
 
 h1 {

@@ -91,9 +91,9 @@ export default function RecipeRequest({ ingredients }) {
 
     return (
         <div>
-
             {(!!isLoading && !dataIsReady) && <Loader />}
             {(!isLoading && !!dataIsReady) && <ResultPage image={image} recipe={recipe} />}
+
 
         </div>
     )

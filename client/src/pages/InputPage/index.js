@@ -35,8 +35,9 @@ export default function InputPage() {
                     <IngredientsForm onDataSubmit={handleData} />
                 }
                 {!!formButton &&
-                    <button onClick={formAndButtonToggleHandler}>form</button>}
+                    <button className='form-toggle' onClick={formAndButtonToggleHandler}>show form</button>}
                 <RecipeRequest ingredients={formData} />
+
             </div>
         </>
     )

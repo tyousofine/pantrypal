@@ -1,33 +1,23 @@
 import React, { useEffect } from 'react';
-import axios from 'axios';
+import './styles.scss'
+
+import picture from '../../images/bg.jpg'
+
+
 
 
 // props coming from recipeRequest component
 export default function ResultPage({ image, recipe }) {
 
-
-    // useEffect(() => {
-    //     axios.fetch('', {
-    //         method: 'POST',
-    //         header: "",
-    //         body: ""
-    //     }).then((res) => {
-
-    //     }).catch((error) => {
-    //         console.log(error)
-    //     })
-    // })
-
     return (
-        <>
+        <div className="container-results">
 
-            <div>
-                {!!image ? <img src={image} style={{ width: '300px' }} alt="food " />
+            <div className='container-image'>
+                {!!image ? <img src={image} alt="food " />
                     : (null)
                 }
             </div>
-            <div dangerouslySetInnerHTML={{ __html: recipe }}></div>
-
-        </>
+            <div className='recipe' dangerouslySetInnerHTML={{ __html: recipe }}></div>
+        </div>
     )
 }
